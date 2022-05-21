@@ -1,0 +1,14 @@
+<h2 style="text-align: center;">test works!</h2>
+<!-- interpolation -->
+<h4> {{topic}} </h4>
+<!-- property binding -->
+<input [disabled]="isDesabled" placeholder="Property binding" type="text">
+<!-- clss binding -->
+<h4 [class]="myClass" >class binding</h4>
+<!-- multiple class add -->
+<h4 [ngClass]="classes" >Multiple Class Add</h4>
+<!-- style binding -->
+<h4 [style.color]="'orange'" >Normal style binding</h4>
+<h4 [style.color]="myStyle">Binding Style</h4>
+<h4 [style.backgroundColor]="hasError ? 'pink' : 'orange' " >Conditionaly style</h4>
+<h4 [ngStyle]="multiStyle" >Multiple style</h4>
