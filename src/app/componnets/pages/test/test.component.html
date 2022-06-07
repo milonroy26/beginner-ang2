@@ -12,3 +12,86 @@
 <h4 [style.color]="myStyle">Binding Style</h4>
 <h4 [style.backgroundColor]="hasError ? 'pink' : 'orange' " >Conditionaly style</h4>
 <h4 [ngStyle]="multiStyle" >Multiple style</h4>
+<!-- event -->
+<input #input (click)="getData(input.value)" placeholder="click event" type="text"> <br> <br>
+<!-- event keyup -->
+<input #input1 (keyup)="getData(input1.value)" placeholder="keyup value" type="text"> <br><br>
+<!-- event keydown -->
+<input #input2 (keydown)="getData(input2.value)" placeholder="keydown value" type="text"> <br><br>
+<!-- blur -->
+<input #input3 (blur)="getData(input3.value)" placeholder="blur value" type="text"><br><br>
+<h4 (mouseup)="getData('mouseUp')" >mouseup</h4>
+
+<!-- Get Input Box Value  -->
+<input #ivalue placeholder="Type" type="text">
+<button (click)="getInput(ivalue.value)" >Click</button>
+<p>Sow Data: {{displayData}} </p>
+
+<!-- ng if condition -->
+<h2 *ngIf="displayName; else elseblock">
+    <h3>I am a programmer</h3>
+</h2>
+<ng-template #elseblock>
+    <h2>I am a student</h2>
+</ng-template>
+
+<!-- ng switch -->
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'green'">Green Color</div>
+    <div *ngSwitchCase="'blue'">Blue Color</div>
+    <div *ngSwitchCase="'red'">Red Color</div>
+    <div *ngSwitchCase="'pink'">Pink Color</div>
+</div>
+
+<!-- *ngFon -->
+<div *ngFor="let student of students; index as i">
+    <h3> {{i}} {{student}} </h3>
+</div>
+<!-- apply loop on array object -->
+<div *ngFor="let uData of userDetails">
+    <h3> Hi I Am: {{uData.name}}, My Gamil: {{uData.gmail}} And id: {{uData.id}} </h3>
+</div>
+<!-- *ngFor nested -->
+<ul *ngFor="let sDetail of stuDetails">
+    <li> {{sDetail.name}} </li>
+    <li> {{sDetail.id}} </li>
+    <li>Favorite:</li>
+    <ul *ngFor="let favorite of sDetail.favorites">
+        <li> {{favorite}} </li>
+    </ul>
+</ul>
+
+<!-- hide and tag show -->
+<button (click)="toggle()">Toggle</button>
+<h3 *ngIf="displayName">Thoggle is a true</h3>
+
+<!-- Two way binding -->
+<p>Two way binding</p>
+<input type="text" [(ngModel)]="userName">
+<h3>Name: {{userName}} </h3>
+<!-- jeosn file convert -->
+<input type="email" [(ngModel)]="email">
+<button (click)="proces()">Proces Data</button>
+<h3>Email: {{email}} </h3>
+<!-- template Reference Variable -->
+<input type="password" placeholder="Type Your Password" #box>
+<button (click)="referenceV(box.value)">Reference variable</button>
+<h3> Password: {{password}} </h3>
+
+<!-- advance pipes -->
+<!-- UpperCasePipe -->
+<h2> {{pipesTitle | uppercase}} </h2>
+<!-- SlicePipe -->
+{{ pipesTitle | slice : 2 : 4 }}
+<!-- PercentPipe -->
+<h2> {{20|percent}} </h2>
+<!-- JsonPipe -->
+<h2> {{person | json}} </h2>
+<!-- DecimalPipe -->
+<h2> {{3.6 | number: '1.0-0'}}</h2>
+<!-- DatePipe -->
+<p>Today is {{today | date:'medium'}}</p>
+<!-- CurrencyPipe GBP, INE, USD -->
+<h2> {{20 | currency: 'USD'}} </h2> 
+<!-- angular custom pipes -->
+<h2> {{10 | usdInr:200}} </h2>
