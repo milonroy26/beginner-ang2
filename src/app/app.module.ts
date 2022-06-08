@@ -11,7 +11,8 @@ import { ChildCmpComponent } from './componnets/pages/child-cmp/child-cmp.compon
 import {FormsModule} from '@angular/forms';
 import { TypescriptComponent } from './componnets/pages/typescript/typescript.component';
 import { UsdInrPipe } from './componnets/pages/pipes/usd-inr.pipe';
-
+import { RestApiComponent } from './componnets/pages/rest-api/rest-api.component';
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +23,13 @@ import { UsdInrPipe } from './componnets/pages/pipes/usd-inr.pipe';
     ChildCmpComponent,
     TypescriptComponent,
     UsdInrPipe,
+    RestApiComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
