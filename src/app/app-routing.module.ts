@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componnets/pages/home/home.component';
 import { TodeListComponent } from './componnets/pages/tode-list/tode-list.component';
 import { TypescriptComponent } from './componnets/pages/typescript/typescript.component';
+import { RestApiComponent } from './componnets/pages/rest-api/rest-api.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home',pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: "loogin", component: LooginComponent},
   {path: "todolist", component: TodeListComponent},
   {path: 'typescript', component: TypescriptComponent},
+  { path: 'rest-api', component: RestApiComponent }
   
 ];
 
