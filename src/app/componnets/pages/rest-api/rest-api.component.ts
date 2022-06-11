@@ -1,44 +1,50 @@
-import { ApiService } from './../../../services/api.service';
-import { UserServicesService } from './../../../services/user-services.service'
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
+import { UserServicesService } from 'src/app/services/user-services.service';
+
 @Component({
   selector: 'app-rest-api',
   templateUrl: './rest-api.component.html',
   styleUrls: ['./rest-api.component.scss']
 })
 export class RestApiComponent implements OnInit {
-  public displayData:any;
-  public userName:any;
-  public result:any;
-  public allStudent:any;
-  public userInformation:any;
 
-  constructor( private http: HttpClient, private studentInf: ApiService, private userData: UserServicesService) {
-      this.allStudent = this.studentInf.stuData();
-      this.userInformation = this.userData.getUsersdata();
-  }
+  // FOR CRATEING ACCOUNT
+  public newAccountName: string = '';
+  public newAccountEmail: string = '';
+  public newAccountPassword: string = '';
 
+  // FOR LOGIN INTO ACCOUNT
+  public loginEmail: string = '';
+  public loginPassword: string = '';
+
+  constructor(
+    private User: UserServicesService,
+    private Title: Title
+  ) {}
+  
   ngOnInit(): void {
+    this.Title.setTitle("Todo App");
   }
 
-  postData(){
-    let url = "https://jsonplaceholder.typicode.com/posts";
-    this.http.post(url, {
-      name : this.userName,
-      gmail: 'milon@gmail.com',
-    }).toPromise().then((data:any) =>{
-      this.result = JSON.stringify(`${data.name} --- ${data.gmail}`);
+  register(){
+    this.User.signUp({name: this.newAccountName, email: this.newAccountEmail, password: this.newAccountPassword})
+    .subscribe(data => {
+      console.log("Accoutn Created");
+    }, error => {
+      console.log(error.error)
     })
   }
 
-  studentData(){
-    const player = [
-      {name: "milon", age: 23, gmail: "milon@gmail.com"},
-      {name: "jeson", age: 21, gmail: "jeson@gmail.com"},
-    ]
+  login(){
+    this.User.login({email: this.loginEmail, password: this.loginPassword})
+    .subscribe(data => {
+      console.log(data);
+      alert(`${data.name} is logged in`);
+    }, error => {
+      alert('Login eror');
+      console.log(error.error);
+    })
   }
-
-
 
 }
