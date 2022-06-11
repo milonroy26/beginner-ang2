@@ -2,11 +2,23 @@
     <li> {{user.name}} </li>
 </ul>
 
+<div>
+    <input type="text" [(ngModel)]="userName" placeholder="Type your name:">
+    <button (click)="postData()">Post Data</button>
+    <h3> {{result}} </h3>
+</div>
 
+<div>
+    <ul>
+        <li *ngFor="let student of allStudent"> {{student.name}} -- {{student.age}} -- {{student.gmail}} </li>
+    </ul>
+</div>
+
+<h1 *ngFor="let user of userInformation"> My name is: {{user.name}} <br> Email: {{user.email}} </h1>
 <!-- post data -->
-<form #userForm = "ngForm" (ngSubmit)="getUserFormData(userForm.value)">
+<!-- <form #userForm = "ngForm" (ngSubmit)="getUserFormData(userForm.value)">
     <input type="text" ngModel placeholder="Type your name:"> <br><br>
     <input type="email" ngModel name="" placeholder="Type your Email:"> <br> <br>
     <input type="password"ngmode name="" placeholder="Type your password:"> <br> <br>
     <button>Add New</button>
-</form>
+</form> -->
