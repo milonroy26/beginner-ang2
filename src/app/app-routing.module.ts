@@ -1,3 +1,4 @@
+import { UsersComponent } from './componnets/pages/users/users.component';
 import { LooginComponent } from './componnets/pages/loogin/loogin.component';
 import { TestComponent } from './componnets/pages/test/test.component';
 import { NgModule } from '@angular/core';
@@ -8,14 +9,15 @@ import { TypescriptComponent } from './componnets/pages/typescript/typescript.co
 import { RestApiComponent } from './componnets/pages/rest-api/rest-api.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home',pathMatch:'full'},
-  {path: "home", component: HomeComponent},
-  {path: "test", component: TestComponent},
-  {path: "loogin", component: LooginComponent},
-  {path: "todolist", component: TodeListComponent},
-  {path: 'typescript', component: TypescriptComponent},
-  { path: 'rest-api', component: RestApiComponent }
-  
+  { path: '', redirectTo: '/home',pathMatch:'full'},
+  { path: "home", component: HomeComponent},
+  { path: "test", component: TestComponent},
+  { path: "loogin", component: LooginComponent},
+  { path: "todolist", component: TodeListComponent},
+  { path: 'typescript', component: TypescriptComponent},
+  { path: 'rest-api', component: RestApiComponent },
+  { path: 'rest-api', component: RestApiComponent },
+  { path: 'user/:id', component: UsersComponent }
 ];
 
 @NgModule({

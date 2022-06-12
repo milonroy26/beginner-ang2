@@ -1,1 +1,20 @@
 <p>loogin works!</p>
+
+<!-- Templated driven form\ -->
+<form #loginForm = "ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text" name="text" placeholder="Type your name:" ngModel> <br><br>
+    <input type="email" name="email" placeholder="Type your email:" ngModel> <br> <br>
+    <input type="password" name="password" placeholder="Type your password" ngModel> <br> <br>
+    <button>LOGIN DATA</button>
+</form>
+
+<!-- Reactive Form -->
+<p>Reactive Form</p>
+
+<form [formGroup]="reactiveForm" (ngSubmit)="loginData()">
+    <input type="text" name="text" placeholder="Type your" name="user" formControlName="user"> <br><br>
+    <input type="email" name="email" placeholder="Type your email:" formControlName="email"> <br> <br>
+    <input type="password" name="password" placeholder="Type your password" formControlName="password"> <br> <br>
+    <button>LOGIN DATA</button>
+</form>
+

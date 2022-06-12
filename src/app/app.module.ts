@@ -8,11 +8,12 @@ import { HomeComponent } from './componnets/pages/home/home.component';
 import { LooginComponent } from './componnets/pages/loogin/loogin.component';
 import { TodeListComponent } from './componnets/pages/tode-list/tode-list.component';
 import { ChildCmpComponent } from './componnets/pages/child-cmp/child-cmp.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TypescriptComponent } from './componnets/pages/typescript/typescript.component';
 import { UsdInrPipe } from './componnets/pages/pipes/usd-inr.pipe';
 import { RestApiComponent } from './componnets/pages/rest-api/rest-api.component';
 import { HttpClientModule} from '@angular/common/http';
+import { UsersComponent } from './componnets/pages/users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +25,14 @@ import { HttpClientModule} from '@angular/common/http';
     TypescriptComponent,
     UsdInrPipe,
     RestApiComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
