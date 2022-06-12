@@ -1,19 +1,19 @@
-<label for="">Name</label>
+<label for="">Name: </label>
 <input type="text" [(ngModel)]="newAccountName">
-<br>
-<label for="">Emaiil</label>
+<br><br>
+<label for="">Emaiil: </label>
 <input type="text" [(ngModel)]="newAccountEmail">
-<br>
-<label for="">Password</label>
+<br><br>
+<label for="">Password: </label>
 <input type="password" [(ngModel)]="newAccountPassword">
 <br> <br>
-<button (click)="register()" >REGISTER NEW ACCOUNT</button>
+<button (click)="register()">REGISTER NEW ACCOUNT</button>
 
 <h3>LOGIN</h3>
-<label for="">Email:</label>
+<label for="">Email: </label>
 <input type="text" [(ngModel)]="loginEmail">
-<br>
-<label for="">Password</label>
+<br><br>
+<label for="">Password: </label>
 <input type="password" [(ngModel)]="loginPassword">
 <br><br>
 <button (click)="login()">LOGIN</button>

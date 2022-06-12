@@ -14,6 +14,9 @@ import { UsdInrPipe } from './componnets/pages/pipes/usd-inr.pipe';
 import { RestApiComponent } from './componnets/pages/rest-api/rest-api.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UsersComponent } from './componnets/pages/users/users.component';
+import { NoPageComponent } from './componnets/pages/no-page/no-page.component';
+import { AboutComponent } from './componnets/pages/about/about.component';
+import { AbutMeComponent } from './componnets/pages/abut-me/abut-me.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,9 @@ import { UsersComponent } from './componnets/pages/users/users.component';
     UsdInrPipe,
     RestApiComponent,
     UsersComponent,
+    NoPageComponent,
+    AboutComponent,
+    AbutMeComponent,
   ],
   imports: [
     BrowserModule,
